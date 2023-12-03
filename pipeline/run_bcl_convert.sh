@@ -1,6 +1,7 @@
 #!/usr/bin/bash -l
 #SBATCH -p short -c 64 --mem 128gb -C xeon --out logs/bcl-convert.%A_%a.log
 module load bclconvert
+ulimit -n 1000000
 # see this on google cloud
 # gs://stajichlab-ecdre/Amplicon/
 CPU=64
@@ -23,6 +24,6 @@ IFS=,
 sed -n ${N}p $SHEET | while read FLOWCELL DESC NOTE
 do
 	bcl-convert --bcl-input-directory $BASE/$FLOWCELL.NextSeq2000_raw --output-directory $OUT/$FLOWCELL \
-		--no-lane-splitting TRUE --bcl-num-conversion-threads $CPU \
-	  	--force --sample-sheet $(realpath ECDRE/$FLOWCELL.csv)
+		--no-lane-splitting true --bcl-num-conversion-threads $CPU \
+	  	--force --sample-sheet $(realpath ECDRE/$FLOWCELL.csv) --output-legacy-stats=true 
 done
