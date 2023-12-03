@@ -1,2 +1,2 @@
-# Amplicon_Sample_Sheets
-Sample Sheets for Amplicon Runs
+# Amplicon Pre-Processing
+Sample Sheets for Amplicon Pool Runs and steps for demux
