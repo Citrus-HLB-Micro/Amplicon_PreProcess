@@ -7,7 +7,7 @@ do
 		FILE=Pool_$pool.$type.tsv
 		CSV=Pool_$pool.$type.csv
 		python ../scripts/fix_barcodes.py $FILE > $CSV
-		perl -i -p -e "s/^(Pos|Neg|NAA)/\$1_Pool$pool/" $CSV
+		perl -i -p -e "s/^(Pos|Neg|NAA)/\$1-Pool$pool/" $CSV
 	done
 done
 
