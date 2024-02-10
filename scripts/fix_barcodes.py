@@ -8,6 +8,9 @@ with open(sys.argv[1],"r") as fh:
     header= next(reader)
     outcsv.writerow(['Sample_ID','Index'])
     for row in reader:
+        if len(row) < 3:
+            print(row)
+            continue
         samp = row[1]
         barcode = Seq(row[2])
         if samp.endswith("ITS"):
