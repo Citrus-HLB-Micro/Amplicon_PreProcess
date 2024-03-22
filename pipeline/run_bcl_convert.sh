@@ -17,13 +17,13 @@ if [ -z $N ]; then
 fi
 
 SHEET=flowcells.csv
-BASE=/bigdata/stajichlab/shared/projects/ECDRE/Amplicon/raw
+BASE=/bigdata/stajichlab/shared/projects/ECDRE/Amplicon/raw/archive_raw
 OUT=/bigdata/stajichlab/shared/projects/ECDRE/Amplicon/data/UF_UCR_ECDRE_Trials/Flowcells
 mkdir -p $OUT
 IFS=,
 sed -n ${N}p $SHEET | while read FLOWCELL DESC NOTE
 do
-	bcl-convert --bcl-input-directory $BASE/$FLOWCELL.NextSeq2000_raw --output-directory $OUT/$FLOWCELL \
+	bcl-convert --bcl-input-directory $BASE/$FLOWCELL --output-directory $OUT/$FLOWCELL \
 		--no-lane-splitting true --bcl-num-conversion-threads $CPU \
 	  	--force --sample-sheet $(realpath ECDRE/$FLOWCELL.csv) --output-legacy-stats=true 
 done
