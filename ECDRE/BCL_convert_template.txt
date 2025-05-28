@@ -1,6 +1,6 @@
 [Header],
 FileFormatVersion,2
-RunName,FC_1885_Stajich_ECDRE_ITS_16S_Pool1
+RunName,FC_1885_Stajich_ECDRE_ITS_16S_PoolXX_XX
 InstrumentPlatform,NextSeq1k2k
 IndexOrientation,Forward
 
@@ -10,7 +10,7 @@ Read2Cycles,301
 Index1Cycles,12
 
 [Sequencing_Settings]
-InputContainerIdentifier,Stajich_ECDRE_ITS_16S_Pool1
+InputContainerIdentifier,Stajich_ECDRE_ITS_16S_PoolXXX_XX
 
 [BCLConvert_Settings]
 SoftwareVersion,3.8.4
