@@ -1,5 +1,5 @@
 #!/usr/bin/bash -l
-#SBATCH -p short -c 64 --mem 128gb -C xeon --out logs/bcl-convert.%A_%a.log
+#SBATCH -p short -c 64 --mem 128gb -C cascade --out logs/bcl-convert.%A_%a.log
 module load bclconvert
 ulimit -n 1000000
 # see this on google cloud
