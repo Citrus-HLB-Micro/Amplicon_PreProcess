@@ -1,6 +1,6 @@
 #!/usr/bin/bash -l
 
-for pool in $(seq 7 7)
+for pool in $(seq 8 8)
 do
 	for type in ITS 16S
 	do
